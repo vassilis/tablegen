@@ -10,21 +10,34 @@
 		<![endif]-->
 	</head>
 	<body>
+		<header>TableGen</header>
 		<ul id="actions">
-			<li id="del-row">-ROW</li>
-			<li id="del-col">-COL</li>
-			<li id="min-colspan">-COLSPAN</li>
-			<li id="min-rowspan">-ROWSPAN</li>
+			<li><span id="toggle-html">HTML</li>
 			<li class="separator">|</li>
-			<li id="add-row">+ROW</li>
-			<li id="add-col">+COL</li>
-			<li id="add-colspan">+COLSPAN</li>
-			<li id="add-rowspan">+ROWSPAN</li>
+			<li><span id="make-th">TH</li>
+			<li><span id="make-td">TD</li>
 			<li class="separator">|</li>
-			<li id="make-th">TH</li>
-			<li id="make-td">TD</li>
+			<li>
+				<span id="min-rowspan">-</span>
+				<label>ROWSPAN</label>
+				<span id="add-rowspan">+</span>
+			</li>
+			<li>
+				<span id="min-colspan">-</span>
+				<label>COLSPAN</label>
+				<span id="add-colspan">+</span>
+			</li>
 			<li class="separator">|</li>
-			<li id="toggle-html">HTML</li>
+			<li>
+				<span id="del-row">-</span>
+				<label>ROW</label>
+				<span id="add-row">+</span>
+			</li>
+			<li>
+				<span id="del-col">-</span>
+				<label>COL</label>
+				<span id="add-col">+</span>
+			</li>
 		</ul>
 		<table><tr><td contenteditable="true">&nbsp;</td></tr></table>
 		<textarea id="code"></textarea>

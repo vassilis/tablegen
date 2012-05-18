@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Henny+Penny);
 /* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
@@ -67,21 +68,97 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 10, ../sass/screen.scss */
+/* line 13, ../sass/screen.scss */
 body {
   background: #EEE;
   font: normal 90%/1 arial;
 }
 
-/* line 15, ../sass/screen.scss */
-#code {
-  background: #DDD;
-  margin: 2% 10%;
+/* line 18, ../sass/screen.scss */
+header {
   width: 80%;
-  height: 300px;
+  padding: 40px 0 20px;
+  margin: 0 auto;
+  text-align: center;
+  font: normal 3em/1 "Henny Penny", arial;
+  background: #FFF;
+  color: #555;
 }
 
-/* line 22, ../sass/screen.scss */
+/* line 28, ../sass/screen.scss */
+#actions {
+  width: 80%;
+  margin: 0 10%;
+  padding: 1% 0;
+  text-align: center;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #eeeeee));
+  background: -webkit-linear-gradient(#ffffff, #eeeeee);
+  background: -moz-linear-gradient(#ffffff, #eeeeee);
+  background: -o-linear-gradient(#ffffff, #eeeeee);
+  background: -ms-linear-gradient(#ffffff, #eeeeee);
+  background: linear-gradient(#ffffff, #eeeeee);
+}
+/* line 34, ../sass/screen.scss */
+#actions li {
+  font: bold 1.2em/1 monospace;
+  background: #555;
+  color: #EEE;
+  padding: 1px;
+  margin: 0 2px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+/* line 7, ../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+#actions li {
+  *display: inline;
+}
+/* line 42, ../sass/screen.scss */
+#actions li label {
+  vertical-align: -2px;
+}
+/* line 45, ../sass/screen.scss */
+#actions li span {
+  cursor: pointer;
+  padding: 0 5px;
+  margin: 3px;
+  background: #EEE;
+  color: #555;
+  font: bold 1.7em/1 monospace;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+/* line 7, ../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+#actions li span {
+  *display: inline;
+}
+/* line 54, ../sass/screen.scss */
+#actions li span:hover {
+  background: gold;
+}
+/* line 58, ../sass/screen.scss */
+#actions li.separator {
+  background: none;
+  cursor: default;
+  color: #AAA;
+}
+
+/* line 66, ../sass/screen.scss */
 table {
   width: 80%;
   margin: 2% 10%;
@@ -89,58 +166,33 @@ table {
   border-collapse: separate;
   border-spacing: 10px;
 }
-/* line 28, ../sass/screen.scss */
+/* line 72, ../sass/screen.scss */
 table td, table th {
   padding: 10px;
   background: white;
   outline: 0;
 }
-/* line 32, ../sass/screen.scss */
+/* line 76, ../sass/screen.scss */
 table td:hover, table th:hover {
-  background: lemonchiffon;
+  background: #FFD;
 }
-/* line 35, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
 table td.selected, table th.selected {
-  background: lightyellow;
+  background: #FFA;
 }
-/* line 39, ../sass/screen.scss */
+/* line 83, ../sass/screen.scss */
 table th {
   font-weight: bold;
 }
 
-/* line 44, ../sass/screen.scss */
-#actions {
-  width: 80%;
+/* line 88, ../sass/screen.scss */
+#code {
+  background: #FFF;
   margin: 2% 10%;
-  text-align: right;
-}
-/* line 48, ../sass/screen.scss */
-#actions li {
-  font: 1.1em monospace;
-  background: #AAA;
-  padding: 5px 10px;
-  cursor: pointer;
-  display: -moz-inline-box;
-  -moz-box-orient: vertical;
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-}
-/* line 7, ../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
-#actions li {
-  *display: inline;
-}
-/* line 55, ../sass/screen.scss */
-#actions li:hover {
-  background: gold;
-}
-/* line 58, ../sass/screen.scss */
-#actions li.separator {
-  background: none;
-  cursor: default;
+  padding: 1%;
+  width: 78%;
+  height: 300px;
+  display: none;
+  border: 1px solid #CCC;
+  outline: 0;
 }

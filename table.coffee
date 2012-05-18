@@ -4,6 +4,10 @@
 		body = $('body')
 
 		$('#code').val('')
+		window.source()
+
+		$('#toggle-html').on 'click', () ->
+			$('#code').toggle()			
 		
 		$('#add-row').on 'click', () ->
 			table = $('table')
@@ -13,9 +17,7 @@
 			else
 				row = table.find('tr:last')
 			newrow = row.clone()
-			# newrow = $('<tr><td contenteditable="true">&nbsp;</td></tr>')
-			# if window.countCols() > 1
-				# newrow = $('<tr><td colspan="' + window.countCols() + '" contenteditable="true">&nbsp;</td></tr>')
+			newrow.find('td').html('&nbsp;')
 			row.after(newrow)
 			selected.removeClass('selected')
 			newrow.find('td').eq(selected.index()).focus().addClass('selected')
@@ -140,3 +142,5 @@
 		$('#code').val($('#code').val().replace(/<th/g, '\t\t\t<th'))
 		$('#code').val($('#code').val().replace(/<\/th>/g, '</th>\n'))
 		$('#code').val($('#code').val().replace(/selected/g, ''))
+		$('#code').val($('#code').val().replace(/clas/g, ''))
+		$('#code').val($('#code').val().replace(/\ s=""/g, ''))

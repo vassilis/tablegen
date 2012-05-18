@@ -3,20 +3,64 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
+@import url(http://fonts.googleapis.com/css?family=Henny+Penny);
 @import "compass/reset";
 @import "compass/css3/inline-block";
 @import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/css3/images";
 
 body {
 	background: #EEE;
 	font: normal 90%/1 arial;
 }
 
-#code {
-	background: #DDD;
-	margin: 2% 10%;
+header {
 	width: 80%;
-	height: 300px;
+	padding: 40px 0 20px;
+	margin: 0 auto;
+	text-align: center;
+	font: normal 3em/1 'Henny Penny', arial;
+	background: #FFF;
+	color: #555;
+}
+
+#actions {
+	width: 80%;
+	margin: 0 10%;
+	padding: 1% 0;
+	text-align: center;
+	@include background(linear-gradient(#FFF, #EEE));
+	li {
+		font: bold 1.2em/1 monospace;
+		background: #555;
+		color: #EEE;
+		padding: 1px;
+		margin: 0 2px;
+		@include inline-block;
+		@include border-radius(3px);
+		label {
+			vertical-align: -2px;
+		}
+		span {
+			cursor: pointer;
+			padding: 0 5px;
+			margin: 3px;
+			background: #EEE;
+			color: #555;
+			font: bold 1.7em/1 monospace;
+			@include inline-block;
+			@include border-radius(3px);
+			&:hover {
+				background: gold;
+			}
+		}
+		&.separator {
+			background: none;
+			cursor: default;
+			color: #AAA;
+		}
+	}
 }
 
 table {
@@ -30,10 +74,10 @@ table {
 		background: white;
 		outline: 0;
 		&:hover {
-			background: lemonchiffon;
+			background: #FFD;
 		}
 		&.selected {
-			background: lightyellow;
+			background: #FFA;
 		}
 	}
 	th {
@@ -41,23 +85,13 @@ table {
 	}
 }
 
-#actions {
-	width: 80%;
+#code {
+	background: #FFF;
 	margin: 2% 10%;
-	text-align: right;
-	li {
-		font: 1.1em monospace;
-		background: #AAA;
-		padding: 5px 10px;
-		cursor: pointer;
-		@include inline-block;
-		@include border-radius(5px);
-		&:hover {
-			background: gold;
-		}
-		&.separator {
-			background: none;
-			cursor: default;
-		}
-	}
+	padding: 1%;
+	width: 78%;
+	height: 300px;
+	display: none;
+	border: 1px solid #CCC;
+	outline: 0;
 }

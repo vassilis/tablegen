@@ -4,6 +4,10 @@
     var body;
     body = $('body');
     $('#code').val('');
+    window.source();
+    $('#toggle-html').on('click', function() {
+      return $('#code').toggle();
+    });
     $('#add-row').on('click', function() {
       var newrow, row, selected, table;
       table = $('table');
@@ -14,6 +18,7 @@
         row = table.find('tr:last');
       }
       newrow = row.clone();
+      newrow.find('td').html('&nbsp;');
       row.after(newrow);
       selected.removeClass('selected');
       newrow.find('td').eq(selected.index()).focus().addClass('selected');
@@ -157,7 +162,9 @@
     $('#code').val($('#code').val().replace(/<\/td>/g, '</td>\n'));
     $('#code').val($('#code').val().replace(/<th/g, '\t\t\t<th'));
     $('#code').val($('#code').val().replace(/<\/th>/g, '</th>\n'));
-    return $('#code').val($('#code').val().replace(/selected/g, ''));
+    $('#code').val($('#code').val().replace(/selected/g, ''));
+    $('#code').val($('#code').val().replace(/clas/g, ''));
+    return $('#code').val($('#code').val().replace(/\ s=""/g, ''));
   };
 
 }).call(this);
