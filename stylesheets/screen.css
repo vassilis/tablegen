@@ -130,8 +130,9 @@ header {
 /* line 43, ../sass/screen.scss */
 #actions li label {
   font: bold .9em 'Economica', monospace;
+  text-shadow: #333333 0 1px 0;
 }
-/* line 46, ../sass/screen.scss */
+/* line 47, ../sass/screen.scss */
 #actions li span {
   cursor: pointer;
   padding: 0 7px;
@@ -176,7 +177,7 @@ header {
 /* line 69, ../sass/screen.scss */
 table {
   width: 80%;
-  margin: 2% 10%;
+  margin: 2% auto;
   border: 1px solid #CCC;
   border-collapse: separate;
   border-spacing: 10px;
@@ -209,4 +210,112 @@ table th {
   border: 1px solid #CCC;
   outline: 0;
   font: normal 1em monospace;
+}
+
+/* line 102, ../sass/screen.scss */
+#new-table {
+  width: 80%;
+  margin: 0 auto;
+  padding: 2% 0;
+  display: none;
+  border-bottom: 2px #333 solid;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #cccccc));
+  background: -webkit-linear-gradient(#eeeeee, #cccccc);
+  background: -moz-linear-gradient(#eeeeee, #cccccc);
+  background: -o-linear-gradient(#eeeeee, #cccccc);
+  background: -ms-linear-gradient(#eeeeee, #cccccc);
+  background: linear-gradient(#eeeeee, #cccccc);
+}
+/* line 109, ../sass/screen.scss */
+#new-table p {
+  font: normal 2.2em/1 "Rancho", arial;
+  margin-bottom: 20px;
+  color: #333;
+}
+/* line 113, ../sass/screen.scss */
+#new-table p span {
+  font-size: .7em;
+}
+/* line 117, ../sass/screen.scss */
+#new-table div.field {
+  color: #EEE;
+  padding: 10px;
+  margin: 0 2px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #555555), color-stop(100%, #333333));
+  background: -webkit-linear-gradient(#555555, #333333);
+  background: -moz-linear-gradient(#555555, #333333);
+  background: -o-linear-gradient(#555555, #333333);
+  background: -ms-linear-gradient(#555555, #333333);
+  background: linear-gradient(#555555, #333333);
+}
+/* line 7, ../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+#new-table div.field {
+  *display: inline;
+}
+/* line 124, ../sass/screen.scss */
+#new-table div.field label {
+  display: block;
+  margin: 0 auto 10px;
+  font: bold 1.2em 'Economica', monospace;
+  text-shadow: #333333 0 1px 0;
+}
+/* line 130, ../sass/screen.scss */
+#new-table div.field input[type="text"] {
+  width: 60px;
+  border: 0;
+  text-align: center;
+  font: bold 2em monospace;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+/* line 138, ../sass/screen.scss */
+#new-table #new-table-actions {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+}
+/* line 7, ../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+#new-table #new-table-actions {
+  *display: inline;
+}
+/* line 140, ../sass/screen.scss */
+#new-table #new-table-actions div {
+  color: #EEE;
+  padding: 5px 10px;
+  cursor: pointer;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #555555), color-stop(100%, #333333));
+  background: -webkit-linear-gradient(#555555, #333333);
+  background: -moz-linear-gradient(#555555, #333333);
+  background: -o-linear-gradient(#555555, #333333);
+  background: -ms-linear-gradient(#555555, #333333);
+  background: linear-gradient(#555555, #333333);
+}
+/* line 147, ../sass/screen.scss */
+#new-table #new-table-actions #create-new-table {
+  font: bold 2em 'Economica', monospace;
+  margin-top: 5px;
+}
+/* line 151, ../sass/screen.scss */
+#new-table #new-table-actions #cancel-new-table {
+  font: bold 1.2em 'Economica', monospace;
 }

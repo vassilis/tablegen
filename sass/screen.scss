@@ -42,6 +42,7 @@ header {
 		@include box-shadow(#99D5F6 0 0 15px);
 		label {
 			font: bold .9em 'Economica', monospace;
+			@include text-shadow(#333 0 1px 0);
 		}
 		span {
 			cursor: pointer;
@@ -51,7 +52,6 @@ header {
 			font: bold 1.5em 'Economica', monospace;
 			@include inline-block;
 			@include border-radius(3px);
-			// @include box-shadow(#000 0 0 3px);
 			@include background(linear-gradient(#FFF, #CCC));
 			&:hover {
 				background: #EEE;
@@ -68,7 +68,7 @@ header {
 
 table {
 	width: 80%;
-	margin: 2% 10%;
+	margin: 2% auto;
 	border: 1px solid #CCC;
 	border-collapse: separate;
 	border-spacing: 10px;
@@ -97,4 +97,59 @@ table {
 	border: 1px solid #CCC;
 	outline: 0;
 	font: normal 1em monospace;
+}
+
+#new-table {
+	width: 80%;
+	margin: 0 auto;
+	padding: 2% 0;
+	display: none;
+	border-bottom: 2px #333 solid;
+	@include background(linear-gradient(#EEE, #CCC));
+	p {
+		font: normal 2.2em/1 'Rancho', arial;
+		margin-bottom: 20px;
+		color: #333;
+		span {
+			font-size: .7em;
+		}
+	}
+	div.field {
+		color: #EEE;
+		padding: 10px;
+		margin: 0 2px;
+		@include inline-block;
+		@include border-radius(3px);
+		@include background(linear-gradient(#555, #333));
+		label {
+			display: block;
+			margin: 0 auto 10px;
+			font: bold 1.2em 'Economica', monospace;
+			@include text-shadow(#333 0 1px 0);
+		}
+		input[type="text"] {
+			width: 60px;
+			border: 0;
+			text-align: center;
+			font: bold 2em monospace;
+			@include border-radius(3px);
+		}
+	}
+	#new-table-actions {
+		@include inline-block;
+		div {
+			color: #EEE;
+			padding: 5px 10px;
+			cursor: pointer;
+			@include border-radius(3px);
+			@include background(linear-gradient(#555, #333));
+		}
+		#create-new-table {
+			font: bold 2em 'Economica', monospace;
+			margin-top: 5px;
+		}
+		#cancel-new-table {
+			font: bold 1.2em 'Economica', monospace;
+		}
+	}
 }

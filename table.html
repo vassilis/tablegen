@@ -40,7 +40,22 @@
 				<span id="add-col">+</span>
 			</li>
 		</ul>
+		<div id="new-table">
+			<p>Generate a new table.<br><span>Current table will be deleted. There is no way back!</span></p>
+			<div class="field">
+				<label>Columns</label>
+				<input type="text" id="new-table-columns">
+			</div>
+			<div class="field">
+				<label>Rows</label>
+				<input type="text" id="new-table-rows">
+			</div>
+			<div id="new-table-actions">
+				<div id="cancel-new-table">Cancel</div>
+				<div id="create-new-table">Gen</div>
+			</div>
+		</div>
 		<table><tr><td contenteditable="true">&nbsp;</td></tr></table>
-		<textarea id="code"></textarea>
+		<textarea id="code" readonly="readonly"></textarea>
 	</body>
 </html>

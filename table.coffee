@@ -7,8 +7,35 @@
 		window.source()
 
 		$('#toggle-html').on 'click', () ->
-			$('#code').toggle()			
-		
+			$('#code').toggle()
+
+		$('#make-table').on 'click', () ->
+			$('#new-table-columns, #new-table-rows').val('1')
+			$('#new-table').slideDown('fast')
+
+		$('#cancel-new-table').on 'click', () ->
+			$('#new-table').slideUp('fast')
+
+		$('#create-new-table').on 'click', () ->
+			table = $('<table><tbody></tbody></table>')
+			rows = eval($('#new-table-rows').val())
+			cols = eval($('#new-table-columns').val())
+			if rows > 0 and cols > 0
+				newrows = ''
+				newcols = ''
+				i = 0
+				while i < cols
+					newcols += '<td contenteditable="true">&nbsp;</td>'
+					i++
+				i = 0
+				while i < rows
+					newrows += '<tr>' + newcols + '</tr>'
+					i++
+				table.append(newrows)
+				$('table').replaceWith(table)
+				$('#new-table').slideUp('fast')
+				window.source()
+
 		$('#add-row').on 'click', () ->
 			table = $('table')
 			selected = $('.selected')
@@ -110,7 +137,13 @@
 			else
 				selected.removeClass('selected')
 				elem.addClass('selected')
-			console.log(elem.html())
+			if elem.html() == '&nbsp;'
+				elem.html('')
+
+		body.on 'blur', 'td, th', () ->
+			elem = $(this)
+			if elem.html() == ''
+				elem.html('&nbsp;')
 
 		body.on 'keyup', 'td, th', () ->
 			window.source()
@@ -129,21 +162,28 @@
 	window.source = () ->
 		table = $('table').clone()
 		html = table.find('td, th').removeAttr('contenteditable')
-		code = $('<p></p>').append(table)
-		$('#code').val(code.html())
-		$('#code').val($('#code').val().replace(/<table>/g, '<table>\n'))
-		$('#code').val($('#code').val().replace(/<tbody>/g, '\t<tbody>\n'))
-		$('#code').val($('#code').val().replace(/<\/tbody>/g, '\t</tbody>\n'))
-		$('#code').val($('#code').val().replace(/<tr>/g, '\t\t<tr>\n'))
-		$('#code').val($('#code').val().replace(/<\/tr>/g, '\t\t</tr>\n'))
-		$('#code').val($('#code').val().replace(/<td/g, '\t\t\t<td'))
-		$('#code').val($('#code').val().replace(/<br><\/td>/g, '</td>'))
-		$('#code').val($('#code').val().replace(/<\/td>/g, '</td>\n'))
-		$('#code').val($('#code').val().replace(/<th/g, '\t\t\t<th'))
-		$('#code').val($('#code').val().replace(/<\/th>/g, '</th>\n'))
-		$('#code').val($('#code').val().replace(/selected/g, ''))
-		$('#code').val($('#code').val().replace(/clas/g, ''))
-		$('#code').val($('#code').val().replace(/\ s=""/g, ''))
+		source = $('<p></p>').append(table)
+		code = $('#code')
+		code.val(
+			source.html()
+			.replace(/<table>/g, '<table>\n')
+			.replace(/<tbody>/g, '\t<tbody>\n')
+			.replace(/<\/tbody>/g, '\t</tbody>\n')
+			.replace(/<tr>/g, '\t\t<tr>\n')
+			.replace(/<\/tr>/g, '\t\t</tr>\n')
+			.replace(/<td/g, '\t\t\t<td')
+			.replace(/<br><\/td>/g, '</td>')
+			.replace(/<\/td>/g, '</td>\n')
+			.replace(/\ <\/td>/g, '</td>')
+			.replace(/<br><\/td>/g, '</td>')
+			.replace(/<th/g, '\t\t\t<th')
+			.replace(/\ <\/th>/g, '</th>')
+			.replace(/<br><\/th>/g, '</th>')
+			.replace(/<\/th>/g, '</th>\n')
+			.replace(/selected/g, '')
+			.replace(/clas/g, '')
+			.replace(/\ s=""/g, '')
+		)
 		updTextareaHeight()
 
 	updTextareaHeight = () ->
