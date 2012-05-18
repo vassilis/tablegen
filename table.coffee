@@ -144,3 +144,12 @@
 		$('#code').val($('#code').val().replace(/selected/g, ''))
 		$('#code').val($('#code').val().replace(/clas/g, ''))
 		$('#code').val($('#code').val().replace(/\ s=""/g, ''))
+		updTextareaHeight()
+
+	updTextareaHeight = () ->
+		content = '<pre>' + $('#code').val().replace(/</g, '@').replace(/>/g, '@') + '</pre>'
+		div = $('<div></div>').append(content)
+		div.appendTo('body')
+		height = div.outerHeight()
+		div.remove()
+		$('#code').css('height', height)

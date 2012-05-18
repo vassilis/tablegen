@@ -1,4 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Henny+Penny);
+@import url(http://fonts.googleapis.com/css?family=Economica:700);
+@import url(http://fonts.googleapis.com/css?family=Rancho);
 /* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
@@ -68,40 +69,37 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 13, ../sass/screen.scss */
+/* line 15, ../sass/screen.scss */
 body {
   background: #EEE;
   font: normal 90%/1 arial;
+  text-align: center;
 }
 
-/* line 18, ../sass/screen.scss */
+/* line 21, ../sass/screen.scss */
 header {
-  width: 80%;
-  padding: 40px 0 20px;
+  padding: 40px 0 30px;
   margin: 0 auto;
   text-align: center;
-  font: normal 3em/1 "Henny Penny", arial;
-  background: #FFF;
-  color: #555;
+  font: normal 4em/1 "Rancho", arial;
+  background: #99D5F6;
+  color: #FFF;
+  text-shadow: #1079b3 0 3px 1px;
 }
 
-/* line 28, ../sass/screen.scss */
+/* line 31, ../sass/screen.scss */
 #actions {
-  width: 80%;
-  margin: 0 10%;
   padding: 1% 0;
   text-align: center;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #eeeeee));
-  background: -webkit-linear-gradient(#ffffff, #eeeeee);
-  background: -moz-linear-gradient(#ffffff, #eeeeee);
-  background: -o-linear-gradient(#ffffff, #eeeeee);
-  background: -ms-linear-gradient(#ffffff, #eeeeee);
-  background: linear-gradient(#ffffff, #eeeeee);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #99d5f6), color-stop(100%, #eeeeee));
+  background: -webkit-linear-gradient(#99d5f6, #eeeeee);
+  background: -moz-linear-gradient(#99d5f6, #eeeeee);
+  background: -o-linear-gradient(#99d5f6, #eeeeee);
+  background: -ms-linear-gradient(#99d5f6, #eeeeee);
+  background: linear-gradient(#99d5f6, #eeeeee);
 }
-/* line 34, ../sass/screen.scss */
+/* line 35, ../sass/screen.scss */
 #actions li {
-  font: bold 1.2em/1 monospace;
-  background: #555;
   color: #EEE;
   padding: 1px;
   margin: 0 2px;
@@ -115,23 +113,31 @@ header {
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   border-radius: 3px;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #555555), color-stop(100%, #333333));
+  background: -webkit-linear-gradient(#555555, #333333);
+  background: -moz-linear-gradient(#555555, #333333);
+  background: -o-linear-gradient(#555555, #333333);
+  background: -ms-linear-gradient(#555555, #333333);
+  background: linear-gradient(#555555, #333333);
+  -webkit-box-shadow: #99d5f6 0 0 15px;
+  -moz-box-shadow: #99d5f6 0 0 15px;
+  box-shadow: #99d5f6 0 0 15px;
 }
 /* line 7, ../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
 #actions li {
   *display: inline;
 }
-/* line 42, ../sass/screen.scss */
+/* line 43, ../sass/screen.scss */
 #actions li label {
-  vertical-align: -2px;
+  font: bold .9em 'Economica', monospace;
 }
-/* line 45, ../sass/screen.scss */
+/* line 46, ../sass/screen.scss */
 #actions li span {
   cursor: pointer;
-  padding: 0 5px;
+  padding: 0 7px;
   margin: 3px;
-  background: #EEE;
-  color: #555;
-  font: bold 1.7em/1 monospace;
+  color: #333;
+  font: bold 1.5em 'Economica', monospace;
   display: -moz-inline-box;
   -moz-box-orient: vertical;
   display: inline-block;
@@ -142,23 +148,32 @@ header {
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   border-radius: 3px;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #cccccc));
+  background: -webkit-linear-gradient(#ffffff, #cccccc);
+  background: -moz-linear-gradient(#ffffff, #cccccc);
+  background: -o-linear-gradient(#ffffff, #cccccc);
+  background: -ms-linear-gradient(#ffffff, #cccccc);
+  background: linear-gradient(#ffffff, #cccccc);
 }
 /* line 7, ../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
 #actions li span {
   *display: inline;
 }
-/* line 54, ../sass/screen.scss */
+/* line 56, ../sass/screen.scss */
 #actions li span:hover {
-  background: gold;
+  background: #EEE;
 }
-/* line 58, ../sass/screen.scss */
+/* line 60, ../sass/screen.scss */
 #actions li.separator {
   background: none;
   cursor: default;
-  color: #AAA;
+  color: #FFF;
+  -webkit-box-shadow: 0 0 0 0;
+  -moz-box-shadow: 0 0 0 0;
+  box-shadow: 0 0 0 0;
 }
 
-/* line 66, ../sass/screen.scss */
+/* line 69, ../sass/screen.scss */
 table {
   width: 80%;
   margin: 2% 10%;
@@ -166,33 +181,32 @@ table {
   border-collapse: separate;
   border-spacing: 10px;
 }
-/* line 72, ../sass/screen.scss */
+/* line 75, ../sass/screen.scss */
 table td, table th {
   padding: 10px;
   background: white;
   outline: 0;
 }
-/* line 76, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
 table td:hover, table th:hover {
   background: #FFD;
 }
-/* line 79, ../sass/screen.scss */
+/* line 82, ../sass/screen.scss */
 table td.selected, table th.selected {
   background: #FFA;
 }
-/* line 83, ../sass/screen.scss */
+/* line 86, ../sass/screen.scss */
 table th {
   font-weight: bold;
 }
 
-/* line 88, ../sass/screen.scss */
+/* line 91, ../sass/screen.scss */
 #code {
   background: #FFF;
-  margin: 2% 10%;
-  padding: 1%;
-  width: 78%;
-  height: 300px;
+  margin: 2% auto;
+  width: 80%;
   display: none;
   border: 1px solid #CCC;
   outline: 0;
+  font: normal 1em monospace;
 }

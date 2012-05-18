@@ -1,4 +1,5 @@
 (function() {
+  var updTextareaHeight;
 
   $(function() {
     var body;
@@ -164,7 +165,18 @@
     $('#code').val($('#code').val().replace(/<\/th>/g, '</th>\n'));
     $('#code').val($('#code').val().replace(/selected/g, ''));
     $('#code').val($('#code').val().replace(/clas/g, ''));
-    return $('#code').val($('#code').val().replace(/\ s=""/g, ''));
+    $('#code').val($('#code').val().replace(/\ s=""/g, ''));
+    return updTextareaHeight();
+  };
+
+  updTextareaHeight = function() {
+    var content, div, height;
+    content = '<pre>' + $('#code').val().replace(/</g, '@').replace(/>/g, '@') + '</pre>';
+    div = $('<div></div>').append(content);
+    div.appendTo('body');
+    height = div.outerHeight();
+    div.remove();
+    return $('#code').css('height', height);
   };
 
 }).call(this);
