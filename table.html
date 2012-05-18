@@ -1,0 +1,32 @@
+<!doctype html> 
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script src="table.js"></script>
+		<link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+		<link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+		<!--[if IE]>
+			<link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+		<![endif]-->
+	</head>
+	<body>
+		<ul id="actions">
+			<li id="del-row">-ROW</li>
+			<li id="del-col">-COL</li>
+			<li id="min-colspan">-COLSPAN</li>
+			<li id="min-rowspan">-ROWSPAN</li>
+			<li class="separator">|</li>
+			<li id="add-row">+ROW</li>
+			<li id="add-col">+COL</li>
+			<li id="add-colspan">+COLSPAN</li>
+			<li id="add-rowspan">+ROWSPAN</li>
+			<li class="separator">|</li>
+			<li id="make-th">TH</li>
+			<li id="make-td">TD</li>
+			<li class="separator">|</li>
+			<li id="toggle-html">HTML</li>
+		</ul>
+		<table><tr><td contenteditable="true">&nbsp;</td></tr></table>
+		<textarea id="code"></textarea>
+	</body>
+</html>
