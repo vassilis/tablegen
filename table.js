@@ -186,10 +186,9 @@
   updTextareaHeight = function() {
     var content, div, height;
     content = '<pre>' + $('#code').val().replace(/</g, '@').replace(/>/g, '@') + '</pre>';
-    div = $('<div></div>').append(content);
+    div = $('<div class="code"></div>').append(content);
     div.appendTo('body');
     height = div.outerHeight();
-    div.remove();
     return $('#code').css('height', height);
   };
 

@@ -202,7 +202,7 @@ table th {
 }
 
 /* line 91, ../sass/screen.scss */
-#code {
+.code {
   background: #FFF;
   margin: 2% auto;
   width: 80%;

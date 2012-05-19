@@ -174,8 +174,7 @@
 
 	updTextareaHeight = () ->
 		content = '<pre>' + $('#code').val().replace(/</g, '@').replace(/>/g, '@') + '</pre>'
-		div = $('<div></div>').append(content)
+		div = $('<div class="code"></div>').append(content)
 		div.appendTo('body')
 		height = div.outerHeight()
-		div.remove()
 		$('#code').css('height', height)
