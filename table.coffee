@@ -10,7 +10,7 @@
 			$('#code').toggle()
 
 		$('#make-table').on 'click', () ->
-			$('#new-table-columns, #new-table-rows').val('1')
+			$('#new-table-columns, #new-table-rows').val('3')
 			$('#new-table').slideDown('fast')
 
 		$('#cancel-new-table').on 'click', () ->
@@ -25,7 +25,7 @@
 				newcols = ''
 				i = 0
 				while i < cols
-					newcols += '<td contenteditable="true">&nbsp;</td>'
+					newcols += '<td contenteditable="true">type here</td>'
 					i++
 				i = 0
 				while i < rows
@@ -44,10 +44,8 @@
 			else
 				row = table.find('tr:last')
 			newrow = row.clone()
-			newrow.find('td').html('&nbsp;')
+			newrow.find('td').removeClass('selected').html('type here')
 			row.after(newrow)
-			selected.removeClass('selected')
-			newrow.find('td').eq(selected.index()).focus().addClass('selected')
 			window.source()
 
 		$('#del-row').on 'click', () ->
@@ -55,25 +53,25 @@
 			if selected.length
 				if $('tr').length > 1
 					selected.closest('tr').remove()
+			$('td').each ->
+				window.fixColspan(this)
 			window.source()
 
 		$('#add-col').on 'click', () ->
-			selected = $('.selected')
-			if selected.length
-				if selected.attr('colspan')
-					selected.attr('colspan', eval(selected.attr('colspan')) - 1)
-					if selected.attr('colspan') <= 2
-						selected.removeAttr('colspan')
-				newcol = selected.clone().html('&nbsp;').focus()
-				selected.removeClass('selected').after(newcol)
+			newcol = $('td').first().clone()
+			newcol.removeClass('selected').html('type here')
+			$('tr').append(newcol)
 			window.source()
 
 		$('#del-col').on 'click', () ->
 			selected = $('.selected')
 			if selected.length
-				if selected.closest('tr').find('td').length > 1
+				row = selected.closest('tr')
+				if row.find('td').length == 1
+					row.remove()
+				else
 					selected.remove()
-			window.source()
+				window.source()
 
 		$('#add-colspan').on 'click', () ->
 			selected = $('.selected')
@@ -95,11 +93,8 @@
 
 		$('#add-rowspan').on 'click', () ->
 			selected = $('.selected')
-			row = selected.closest('tr')
-			rowcols = row.find('td').length
-			nextrow = row.next()
-			nextrowcols = nextrow.find('td').length
-			if selected.length and row.index() < $('tr').length - 1 and nextrowcols < rowcols
+			if selected.length
+				row = selected.closest('tr')
 				if selected.attr('rowspan')
 					selected.attr('rowspan', eval(selected.attr('rowspan')) + 1)
 				else
@@ -139,16 +134,6 @@
 				elem.addClass('selected')
 			if elem.html() == '&nbsp;'
 				elem.html('')
-
-		body.on 'blur', 'td, th', () ->
-			elem = $(this)
-			if elem.html() == ''
-				elem.html('&nbsp;')
-
-		body.on 'keyup', 'td, th', () ->
-			window.source()
-			if $(this).html() == '<br>'
-				$(this).html('')
 
 	############################################## ##############################################
 

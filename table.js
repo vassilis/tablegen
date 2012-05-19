@@ -10,7 +10,7 @@
       return $('#code').toggle();
     });
     $('#make-table').on('click', function() {
-      $('#new-table-columns, #new-table-rows').val('1');
+      $('#new-table-columns, #new-table-rows').val('3');
       return $('#new-table').slideDown('fast');
     });
     $('#cancel-new-table').on('click', function() {
@@ -26,7 +26,7 @@
         newcols = '';
         i = 0;
         while (i < cols) {
-          newcols += '<td contenteditable="true">&nbsp;</td>';
+          newcols += '<td contenteditable="true">type here</td>';
           i++;
         }
         i = 0;
@@ -50,38 +50,38 @@
         row = table.find('tr:last');
       }
       newrow = row.clone();
-      newrow.find('td').html('&nbsp;');
+      newrow.find('td').removeClass('selected').html('type here');
       row.after(newrow);
-      selected.removeClass('selected');
-      newrow.find('td').eq(selected.index()).focus().addClass('selected');
       return window.source();
     });
     $('#del-row').on('click', function() {
       var selected;
       selected = $('.selected');
       if (selected.length) if ($('tr').length > 1) selected.closest('tr').remove();
+      $('td').each(function() {
+        return window.fixColspan(this);
+      });
       return window.source();
     });
     $('#add-col').on('click', function() {
-      var newcol, selected;
-      selected = $('.selected');
-      if (selected.length) {
-        if (selected.attr('colspan')) {
-          selected.attr('colspan', eval(selected.attr('colspan')) - 1);
-          if (selected.attr('colspan') <= 2) selected.removeAttr('colspan');
-        }
-        newcol = selected.clone().html('&nbsp;').focus();
-        selected.removeClass('selected').after(newcol);
-      }
+      var newcol;
+      newcol = $('td').first().clone();
+      newcol.removeClass('selected').html('type here');
+      $('tr').append(newcol);
       return window.source();
     });
     $('#del-col').on('click', function() {
-      var selected;
+      var row, selected;
       selected = $('.selected');
       if (selected.length) {
-        if (selected.closest('tr').find('td').length > 1) selected.remove();
+        row = selected.closest('tr');
+        if (row.find('td').length === 1) {
+          row.remove();
+        } else {
+          selected.remove();
+        }
+        return window.source();
       }
-      return window.source();
     });
     $('#add-colspan').on('click', function() {
       var selected;
@@ -107,13 +107,10 @@
       return window.source();
     });
     $('#add-rowspan').on('click', function() {
-      var nextrow, nextrowcols, row, rowcols, selected;
+      var row, selected;
       selected = $('.selected');
-      row = selected.closest('tr');
-      rowcols = row.find('td').length;
-      nextrow = row.next();
-      nextrowcols = nextrow.find('td').length;
-      if (selected.length && row.index() < $('tr').length - 1 && nextrowcols < rowcols) {
+      if (selected.length) {
+        row = selected.closest('tr');
         if (selected.attr('rowspan')) {
           selected.attr('rowspan', eval(selected.attr('rowspan')) + 1);
         } else {
@@ -151,7 +148,7 @@
       }
       return window.source();
     });
-    body.on('click', 'td, th', function() {
+    return body.on('click', 'td, th', function() {
       var elem, selected;
       elem = $(this);
       selected = $('.selected');
@@ -162,15 +159,6 @@
         elem.addClass('selected');
       }
       if (elem.html() === '&nbsp;') return elem.html('');
-    });
-    body.on('blur', 'td, th', function() {
-      var elem;
-      elem = $(this);
-      if (elem.html() === '') return elem.html('&nbsp;');
-    });
-    return body.on('keyup', 'td, th', function() {
-      window.source();
-      if ($(this).html() === '<br>') return $(this).html('');
     });
   });
 
