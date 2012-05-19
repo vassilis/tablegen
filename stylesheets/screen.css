@@ -74,7 +74,7 @@ body {
 
 /* line 18, ../sass/screen.scss */
 header {
-  padding: 40px 0 30px;
+  padding: 30px 0 20px;
   margin: 0 auto;
   text-align: center;
   font: normal 4em/1 "Aladin", arial;
@@ -86,15 +86,11 @@ header {
 /* line 28, ../sass/screen.scss */
 #actions {
   padding: 1% 0;
+  margin-top: 2px;
   text-align: center;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #99d5f6), color-stop(100%, #eeeeee));
-  background: -webkit-linear-gradient(#99d5f6, #eeeeee);
-  background: -moz-linear-gradient(#99d5f6, #eeeeee);
-  background: -o-linear-gradient(#99d5f6, #eeeeee);
-  background: -ms-linear-gradient(#99d5f6, #eeeeee);
-  background: linear-gradient(#99d5f6, #eeeeee);
+  background: #BBB;
 }
-/* line 32, ../sass/screen.scss */
+/* line 33, ../sass/screen.scss */
 #actions li {
   color: #EEE;
   padding: 1px;
@@ -115,9 +111,6 @@ header {
   background: -o-linear-gradient(#555555, #333333);
   background: -ms-linear-gradient(#555555, #333333);
   background: linear-gradient(#555555, #333333);
-  -webkit-box-shadow: #99d5f6 0 0 15px;
-  -moz-box-shadow: #99d5f6 0 0 15px;
-  box-shadow: #99d5f6 0 0 15px;
 }
 /* line 7, ../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
 #actions li {
@@ -226,12 +219,12 @@ table th {
   padding: 2% 0;
   display: none;
   border-bottom: 2px #333 solid;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #cccccc));
-  background: -webkit-linear-gradient(#eeeeee, #cccccc);
-  background: -moz-linear-gradient(#eeeeee, #cccccc);
-  background: -o-linear-gradient(#eeeeee, #cccccc);
-  background: -ms-linear-gradient(#eeeeee, #cccccc);
-  background: linear-gradient(#eeeeee, #cccccc);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #bbbbbb));
+  background: -webkit-linear-gradient(#eeeeee, #bbbbbb);
+  background: -moz-linear-gradient(#eeeeee, #bbbbbb);
+  background: -o-linear-gradient(#eeeeee, #bbbbbb);
+  background: -ms-linear-gradient(#eeeeee, #bbbbbb);
+  background: linear-gradient(#eeeeee, #bbbbbb);
 }
 /* line 108, ../sass/screen.scss */
 #new-table p {
