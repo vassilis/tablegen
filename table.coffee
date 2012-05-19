@@ -3,15 +3,21 @@
 	$ () ->
 		body = $('body')
 
+		$('.button').on 'keypress', (event) ->
+			if event.which == 13
+				$(this).click()
+
 		$('#code').val('')
-		window.source()
+		# window.source()
 
 		$('#toggle-html').on 'click', () ->
+			window.source()
 			$('#code').toggle()
 
 		$('#make-table').on 'click', () ->
 			$('#new-table-columns, #new-table-rows').val('3')
 			$('#new-table').slideDown('fast')
+			$('#new-table-columns').focus()
 
 		$('#cancel-new-table').on 'click', () ->
 			$('#new-table').slideUp('fast')
@@ -128,7 +134,7 @@
 			selected.removeClass('selected')
 			elem.addClass('selected')
 
-		body.on 'keyup', 'td, th', () ->
+		body.on 'keypress', 'td, th', () ->
 			window.source()
 
 		body.on 'paste', 'td, th', () ->
@@ -182,4 +188,5 @@
 		div = $('<div class="code"></div>').append(content)
 		div.appendTo('body')
 		height = div.outerHeight()
+		div.remove()
 		$('#code').css('height', height)

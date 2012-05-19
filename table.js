@@ -4,14 +4,18 @@
   $(function() {
     var body;
     body = $('body');
+    $('.button').on('keypress', function(event) {
+      if (event.which === 13) return $(this).click();
+    });
     $('#code').val('');
-    window.source();
     $('#toggle-html').on('click', function() {
+      window.source();
       return $('#code').toggle();
     });
     $('#make-table').on('click', function() {
       $('#new-table-columns, #new-table-rows').val('3');
-      return $('#new-table').slideDown('fast');
+      $('#new-table').slideDown('fast');
+      return $('#new-table-columns').focus();
     });
     $('#cancel-new-table').on('click', function() {
       return $('#new-table').slideUp('fast');
@@ -152,7 +156,7 @@
       selected.removeClass('selected');
       return elem.addClass('selected');
     });
-    body.on('keyup', 'td, th', function() {
+    body.on('keypress', 'td, th', function() {
       return window.source();
     });
     return body.on('paste', 'td, th', function() {
@@ -192,6 +196,7 @@
     div = $('<div class="code"></div>').append(content);
     div.appendTo('body');
     height = div.outerHeight();
+    div.remove();
     return $('#code').css('height', height);
   };
 

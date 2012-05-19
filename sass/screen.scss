@@ -50,7 +50,7 @@ header {
 			@include inline-block;
 			@include border-radius(3px);
 			@include background(linear-gradient(#FFF, #CCC));
-			&:hover {
+			&:hover, &:focus {
 				background: #EEE;
 			}
 		}
@@ -142,6 +142,9 @@ table {
 			cursor: pointer;
 			@include border-radius(3px);
 			@include background(linear-gradient(#555, #333));
+			&:hover, &:focus {
+				background: #333;
+			}
 		}
 		#create-new-table {
 			font: bold 2em 'Economica', monospace;

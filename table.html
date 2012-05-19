@@ -12,50 +12,50 @@
 	<body>
 		<header>TableGen</header>
 		<ul id="actions">
-			<li><span id="toggle-html">SOURCE</li>
+			<li><span id="toggle-html" tabindex="1" class="button">SOURCE</li>
 			<li class="separator">&bull;</li>
-			<li><span id="make-table">TABLE</li>
-			<li><span id="make-th">TH</li>
-			<li><span id="make-td">TD</li>
+			<li><span id="make-table" tabindex="2" class="button">TABLE</li>
+			<li><span id="make-th" tabindex="3" class="button">TH</li>
+			<li><span id="make-td" tabindex="4" class="button">TD</li>
 			<li class="separator">&bull;</li>
 			<li>
-				<span id="min-rowspan">-</span>
+				<span id="min-rowspan" tabindex="5" class="button">-</span>
 				<label>ROWSPAN</label>
-				<span id="add-rowspan">+</span>
+				<span id="add-rowspan" tabindex="6" class="button">+</span>
 			</li>
 			<li>
-				<span id="min-colspan">-</span>
+				<span id="min-colspan" tabindex="7" class="button">-</span>
 				<label>COLSPAN</label>
-				<span id="add-colspan">+</span>
+				<span id="add-colspan" tabindex="8" class="button">+</span>
 			</li>
 			<li class="separator">&bull;</li>
 			<li>
-				<span id="del-row">-</span>
+				<span id="del-row" tabindex="9" class="button">-</span>
 				<label>ROW</label>
-				<span id="add-row">+</span>
+				<span id="add-row" tabindex="10" class="button">+</span>
 			</li>
 			<li>
-				<span id="del-col">-</span>
+				<span id="del-col" tabindex="11" class="button">-</span>
 				<label>COL</label>
-				<span id="add-col">+</span>
+				<span id="add-col" tabindex="12" class="button">+</span>
 			</li>
 		</ul>
 		<div id="new-table">
 			<p>Generate a new table.<br><span>Current table will be deleted. There is no way back!</span></p>
 			<div class="field">
 				<label>Columns</label>
-				<input type="text" id="new-table-columns" maxlength="1">
+				<input type="text" id="new-table-columns" maxlength="1" tabindex="101">
 			</div>
 			<div class="field">
 				<label>Rows</label>
-				<input type="text" id="new-table-rows" maxlength="2">
+				<input type="text" id="new-table-rows" maxlength="2" tabindex="102">
 			</div>
 			<div id="new-table-actions">
-				<div id="cancel-new-table">Cancel</div>
-				<div id="create-new-table">Gen</div>
+				<div id="cancel-new-table" tabindex="103" class="button">Cancel</div>
+				<div id="create-new-table" tabindex="104" class="button">Gen</div>
 			</div>
 		</div>
-		<table><tr><td contenteditable="true">type here</td></tr></table>
+		<div><table><tr><td contenteditable="true">type here</td></tr></table></div>
 		<textarea id="code" class="code" readonly="readonly" wrap='off'></textarea>
 	</body>
 </html>

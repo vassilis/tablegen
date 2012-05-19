@@ -157,7 +157,7 @@ header {
   *display: inline;
 }
 /* line 53, ../sass/screen.scss */
-#actions li span:hover {
+#actions li span:hover, #actions li span:focus {
   background: #EEE;
 }
 /* line 57, ../sass/screen.scss */
@@ -317,12 +317,16 @@ table th {
   background: -ms-linear-gradient(#555555, #333333);
   background: linear-gradient(#555555, #333333);
 }
-/* line 146, ../sass/screen.scss */
+/* line 145, ../sass/screen.scss */
+#new-table #new-table-actions div:hover, #new-table #new-table-actions div:focus {
+  background: #333;
+}
+/* line 149, ../sass/screen.scss */
 #new-table #new-table-actions #create-new-table {
   font: bold 2em 'Economica', monospace;
   margin-top: 5px;
 }
-/* line 150, ../sass/screen.scss */
+/* line 153, ../sass/screen.scss */
 #new-table #new-table-actions #cancel-new-table {
   font: bold 1.2em 'Economica', monospace;
 }
