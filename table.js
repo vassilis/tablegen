@@ -148,17 +148,19 @@
       }
       return window.source();
     });
-    return body.on('click', 'td, th', function() {
+    body.on('click', 'td, th', function() {
       var elem, selected;
       elem = $(this);
       selected = $('.selected');
       if (elem.hasClass('selected')) {
-        elem.removeClass('selected');
+        return elem.removeClass('selected');
       } else {
         selected.removeClass('selected');
-        elem.addClass('selected');
+        return elem.addClass('selected');
       }
-      if (elem.html() === '&nbsp;') return elem.html('');
+    });
+    return body.on('keyup', 'td, th', function() {
+      return window.source();
     });
   });
 

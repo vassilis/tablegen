@@ -132,8 +132,9 @@
 			else
 				selected.removeClass('selected')
 				elem.addClass('selected')
-			if elem.html() == '&nbsp;'
-				elem.html('')
+
+		body.on 'keyup', 'td, th', () ->
+			window.source()
 
 	############################################## ##############################################
 
