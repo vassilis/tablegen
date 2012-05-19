@@ -44,11 +44,11 @@
 			<p>Generate a new table.<br><span>Current table will be deleted. There is no way back!</span></p>
 			<div class="field">
 				<label>Columns</label>
-				<input type="text" id="new-table-columns">
+				<input type="text" id="new-table-columns" maxlength="1">
 			</div>
 			<div class="field">
 				<label>Rows</label>
-				<input type="text" id="new-table-rows">
+				<input type="text" id="new-table-rows" maxlength="2">
 			</div>
 			<div id="new-table-actions">
 				<div id="cancel-new-table">Cancel</div>
@@ -56,6 +56,6 @@
 			</div>
 		</div>
 		<table><tr><td contenteditable="true">type here</td></tr></table>
-		<textarea id="code" class="code" readonly="readonly"></textarea>
+		<textarea id="code" class="code" readonly="readonly" wrap='off'></textarea>
 	</body>
 </html>

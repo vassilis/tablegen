@@ -53,8 +53,6 @@
 			if selected.length
 				if $('tr').length > 1
 					selected.closest('tr').remove()
-			$('td').each ->
-				window.fixColspan(this)
 			window.source()
 
 		$('#add-col').on 'click', () ->
@@ -124,17 +122,24 @@
 				selected.replaceWith(t.val())
 			window.source()
 
-		body.on 'click', 'td, th', () ->
+		body.on 'click, focus', 'td, th', () ->
 			elem = $(this)
 			selected = $('.selected')
-			if elem.hasClass('selected')
-				elem.removeClass('selected')
-			else
-				selected.removeClass('selected')
-				elem.addClass('selected')
+			selected.removeClass('selected')
+			elem.addClass('selected')
 
 		body.on 'keyup', 'td, th', () ->
 			window.source()
+
+		body.on 'paste', 'td, th', () ->
+			elem = $(this)
+			setTimeout(
+				->
+					regex = /(<([^>]+)>)/ig;
+					elem.text(elem.text().replace(regex, ''))
+					window.source()
+				, 100
+			)
 
 	############################################## ##############################################
 

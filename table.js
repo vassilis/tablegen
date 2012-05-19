@@ -58,9 +58,6 @@
       var selected;
       selected = $('.selected');
       if (selected.length) if ($('tr').length > 1) selected.closest('tr').remove();
-      $('td').each(function() {
-        return window.fixColspan(this);
-      });
       return window.source();
     });
     $('#add-col').on('click', function() {
@@ -148,19 +145,25 @@
       }
       return window.source();
     });
-    body.on('click', 'td, th', function() {
+    body.on('click, focus', 'td, th', function() {
       var elem, selected;
       elem = $(this);
       selected = $('.selected');
-      if (elem.hasClass('selected')) {
-        return elem.removeClass('selected');
-      } else {
-        selected.removeClass('selected');
-        return elem.addClass('selected');
-      }
+      selected.removeClass('selected');
+      return elem.addClass('selected');
     });
-    return body.on('keyup', 'td, th', function() {
+    body.on('keyup', 'td, th', function() {
       return window.source();
+    });
+    return body.on('paste', 'td, th', function() {
+      var elem;
+      elem = $(this);
+      return setTimeout(function() {
+        var regex;
+        regex = /(<([^>]+)>)/ig;
+        elem.text(elem.text().replace(regex, ''));
+        return window.source();
+      }, 100);
     });
   });
 

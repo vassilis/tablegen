@@ -1,10 +1,7 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import url(http://fonts.googleapis.com/css?family=Economica:700);
-@import url(http://fonts.googleapis.com/css?family=Rancho);
+// @import url(http://fonts.googleapis.com/css?family=Rancho);
+@import url(http://fonts.googleapis.com/css?family=Aladin);
 @import "compass/reset";
 @import "compass/css3/inline-block";
 @import "compass/css3/border-radius";
@@ -22,7 +19,7 @@ header {
 	padding: 40px 0 30px;
 	margin: 0 auto;
 	text-align: center;
-	font: normal 4em/1 'Rancho', arial;
+	font: normal 4em/1 'Aladin', arial;
 	background: #99D5F6;
 	color: #FFF;
 	@include text-shadow(darken(#99D5F6, 40%) 0 3px 1px);
@@ -67,11 +64,12 @@ header {
 }
 
 table {
-	width: 80%;
+	max-width: 80%;
 	margin: 2% auto;
 	border: 1px solid #CCC;
 	border-collapse: separate;
 	border-spacing: 10px;
+	@include inline-block;
 	td, th {
 		padding: 10px;
 		background: white;
@@ -84,7 +82,8 @@ table {
 		}
 	}
 	th {
-		font-weight: bold;
+		font: bold 0.9em arial;
+		text-transform: uppercase;
 	}
 }
 
@@ -92,11 +91,11 @@ table {
 	background: #FFF;
 	margin: 2% auto;
 	width: 80%;
-	// height: 300px;
 	display: none;
 	border: 1px solid #CCC;
 	outline: 0;
 	font: normal 1em monospace;
+	overflow-x: scroll;
 }
 
 #new-table {
@@ -107,7 +106,7 @@ table {
 	border-bottom: 2px #333 solid;
 	@include background(linear-gradient(#EEE, #CCC));
 	p {
-		font: normal 2.2em/1 'Rancho', arial;
+		font: normal 2.2em/1 'Aladin', arial;
 		margin-bottom: 20px;
 		color: #333;
 		span {
