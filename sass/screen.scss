@@ -22,13 +22,13 @@ header {
 	font: normal 4em/1 'Aladin', arial;
 	background: #99D5F6;
 	color: #FFF;
-	@include text-shadow(darken(#99D5F6, 40%) 0 3px 1px);
+	@include text-shadow(darken(#99D5F6, 50%) 0 2px 1px);
+	@include background(linear-gradient(lighten(#99D5F6, 10%), #99D5F6));
 }
 
 #actions {
 	padding: 1% 0; margin-top: 2px;
 	text-align: center;
-	// @include background(linear-gradient(#99D5F6, #EEE));
 	background: #BBB;
 	li {
 		color: #EEE;
@@ -88,13 +88,13 @@ table {
 
 .code {
 	background: #FFF;
-	margin: 2% auto;
+	margin: 0 auto;
 	width: 80%;
 	display: none;
 	border: 1px solid #CCC;
 	outline: 0;
 	font: normal 1em monospace;
-	overflow-x: scroll;
+	overflow-x: auto;
 }
 
 #new-table {

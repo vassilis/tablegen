@@ -80,10 +80,16 @@ header {
   font: normal 4em/1 "Aladin", arial;
   background: #99D5F6;
   color: #FFF;
-  text-shadow: #1079b3 0 3px 1px;
+  text-shadow: #0c5a84 0 2px 1px;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c8e8fa), color-stop(100%, #99d5f6));
+  background: -webkit-linear-gradient(#c8e8fa, #99d5f6);
+  background: -moz-linear-gradient(#c8e8fa, #99d5f6);
+  background: -o-linear-gradient(#c8e8fa, #99d5f6);
+  background: -ms-linear-gradient(#c8e8fa, #99d5f6);
+  background: linear-gradient(#c8e8fa, #99d5f6);
 }
 
-/* line 28, ../sass/screen.scss */
+/* line 29, ../sass/screen.scss */
 #actions {
   padding: 1% 0;
   margin-top: 2px;
@@ -200,13 +206,13 @@ table th {
 /* line 89, ../sass/screen.scss */
 .code {
   background: #FFF;
-  margin: 2% auto;
+  margin: 0 auto;
   width: 80%;
   display: none;
   border: 1px solid #CCC;
   outline: 0;
   font: normal 1em monospace;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 /* line 100, ../sass/screen.scss */
