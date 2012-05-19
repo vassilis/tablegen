@@ -45,16 +45,11 @@
       }
     });
     $('#add-row').on('click', function() {
-      var newrow, row, selected, table;
+      var newrow, row, table;
       table = $('table');
-      selected = $('.selected');
-      if (selected.length) {
-        row = selected.closest('tr');
-      } else {
-        row = table.find('tr:last');
-      }
+      row = table.find('tr:last');
       newrow = row.clone();
-      newrow.find('td').removeClass('selected').html('type here');
+      newrow.find('td, th').replaceWith('<td contenteditable="true">type here</td>');
       row.after(newrow);
       return window.source();
     });
