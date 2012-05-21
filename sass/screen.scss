@@ -22,11 +22,11 @@ header {
 	font: normal 4em/1 'Aladin', arial;
 	background: #99D5F6;
 	color: #FFF;
-	@include text-shadow(darken(#99D5F6, 50%) 0 2px 1px);
+	@include text-shadow(darken(#99D5F6, 50%) 0 1px 1px);
 	@include background(linear-gradient(lighten(#99D5F6, 10%), #99D5F6));
 }
 
-#actions {
+#toolbar {
 	padding: 1% 0; margin-top: 2px;
 	text-align: center;
 	@include background(linear-gradient(#AAA, #BBB));
@@ -36,7 +36,7 @@ header {
 		margin: 0 2px;
 		@include inline-block;
 		@include border-radius(5px);
-		@include box-shadow(#CCC 0 1px 0);
+		@include box-shadow(#CCC 0 1px 0, #444 0 -1px 0);
 		@include background(linear-gradient(#555, #333));
 		label {
 			font: bold .9em 'Economica', monospace;
@@ -59,8 +59,13 @@ header {
 			background: none;
 			cursor: default;
 			color: #FFF;
+			@include box-shadow(none);
 		}
 	}
+}
+
+#table-container {
+	background: #EEE;
 }
 
 table {
@@ -87,12 +92,16 @@ table {
 	}
 }
 
+#code-container {
+	background: #BBB;
+}
+
 .code {
 	background: #FFF;
-	margin: 0 auto;
+	margin: 2% auto;
 	width: 80%;
 	display: none;
-	border: 1px solid #CCC;
+	border: 1px solid #AAA;
 	outline: 0;
 	font: normal 1em monospace;
 	overflow-x: auto;

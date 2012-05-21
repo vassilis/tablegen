@@ -1,6 +1,7 @@
 <!doctype html> 
 <html>
 	<head>
+		<title>TableGen</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 		<script src="table.js"></script>
 		<link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -11,7 +12,7 @@
 	</head>
 	<body>
 		<header>TableGen</header>
-		<ul id="actions">
+		<ul id="toolbar">
 			<li><span id="toggle-html" tabindex="1" class="button">SOURCE</li>
 			<li class="separator">&bull;</li>
 			<li><span id="make-table" tabindex="2" class="button">TABLE</li>
@@ -55,7 +56,7 @@
 				<div id="create-new-table" tabindex="104" class="button">Gen</div>
 			</div>
 		</div>
-		<div><table><tr><td contenteditable="true">type here</td></tr></table></div>
-		<textarea id="code" class="code" readonly="readonly" wrap='off'></textarea>
+		<div id="table-container"><table><tr><td contenteditable="true">type here</td></tr></table></div>
+		<div id="code-container"><textarea id="code" class="code" readonly="readonly" wrap='off'></textarea></div>
 	</body>
 </html>
